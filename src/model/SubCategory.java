@@ -1,12 +1,14 @@
 package model;
 
-public class SubCategory {
+//class subcategory
+public class SubCategory 
+{
 
-	
+	//arguments
 	private int sub_category_id;
 	private String sub_category_name;
 	
-	
+	//getters and setters
 	public int getSub_category_id() {
 		return sub_category_id;
 	}
@@ -21,6 +23,7 @@ public class SubCategory {
 	}
 	
 	
+	//constructor
 	public SubCategory(int sub_category_id, String sub_category_name) {
 		super();
 		this.sub_category_id = sub_category_id;

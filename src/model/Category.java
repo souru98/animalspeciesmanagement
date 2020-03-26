@@ -1,12 +1,15 @@
 package model;
 
-public class Category {
 
-	
+//class category
+public class Category 
+{
+
+	//arguments
 	private int category_id;
 	private String category_name;
 	
-	
+	//getters and setters
 	public int getCategory_id() {
 		return category_id;
 	}
@@ -21,6 +24,7 @@ public class Category {
 	}
 	
 	
+	//constructor
 	public Category(int category_id, String category_name) {
 		super();
 		this.category_id = category_id;

@@ -1,12 +1,16 @@
 package model;
 
-public class AnimalDetails {
+
+//class animal details
+public class AnimalDetails 
+{
 	
+	//arguments
 	private int animal_id;
 	private int city_id;
 	private int population;
 	
-	
+	//getters and setters
 	public int getAnimal_id() {
 		return animal_id;
 	}
@@ -27,6 +31,7 @@ public class AnimalDetails {
 	}
 	
 	
+	//constructor
 	public AnimalDetails(int animal_id, int city_id, int population) {
 		super();
 		this.animal_id = animal_id;

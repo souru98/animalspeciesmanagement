@@ -1,13 +1,14 @@
 package model;
 
-public class City {
+public class City 
+{
 
-	
+	//arguments
 	private int city_id;
 	private String city_name;
 	private int state_id;
 	
-	
+	//getters and setters
 	public int getCity_id() {
 		return city_id;
 	}
@@ -28,6 +29,7 @@ public class City {
 	}
 	
 	
+	//constructor
 	public City(int city_id, String city_name, int state_id) {
 		super();
 		this.city_id = city_id;

@@ -1,7 +1,10 @@
 package model;
 
-public class Animal {
 
+//animal class
+public class Animal 
+{
+//arguments
 private	int animal_id;
 private String name;
 private String height;
@@ -11,6 +14,7 @@ private	int life_span;
 private	int age;
 
 
+//getters and setters
 public int getAnimal_id() {
 	return animal_id;
 }
@@ -53,6 +57,8 @@ public int getAge() {
 public void setAge(int age) {
 	this.age = age;
 }
+
+//constructor
 public Animal(int animal_id, String name, String height, int weight, String sci_name, int life_span, int age) {
 	super();
 	this.animal_id = animal_id;

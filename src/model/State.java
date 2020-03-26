@@ -1,12 +1,15 @@
 package model;
 
-public class State {
+//state class
+public class State 
+{
 
+	//arguments
 	private int state_id;
 	private String state_name;
 	
 	
-	
+	//getters and setters
 	public int getState_id() {
 		return state_id;
 	}
@@ -21,6 +24,7 @@ public class State {
 	}
 	
 	
+	//constructor
 	public State(int state_id, String state_name) {
 		super();
 		this.state_id = state_id;
