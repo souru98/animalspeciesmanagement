@@ -12,49 +12,55 @@ import utility.ConnectionManager;
 
 public class Animal {
 
+	//read method
+//	public static void list() 
+//	{
+//
+//		Connection connection = new ConnectionManager().getConnection();
+//		if (connection != null) {
+//			try {
+//				String selectSQL = "select * from animal order by animal_id";
+//				PreparedStatement statement = connection
+//						.prepareStatement(selectSQL);
+//
+//				ResultSet set = statement.executeQuery();
+//
+//				while (set.next()) {
+//					int animal_id = set.getInt("animal_id");
+//					String animal_name = set.getString("animal_name");
+//					String height = set.getString("height");
+//					int weight = set.getInt("weight");
+//					String sci_name = set.getString("sci_name");
+//					int life_span = set.getInt("life_span");
+//					int age = set.getInt("age");
+//					int main_cat_id = set.getInt("main_category_id");
+//					
+//					System.out.println("Animal_Id : " + animal_id
+//							+ " and Animal_Name : " + animal_name
+//							+ " and height: " + height
+//							+ " and weight: " + weight
+//							+ " and sci_name: " + sci_name
+//							+ " life_span: " + life_span
+//							+ " and age: " + age
+//							+ " and main_cat_id: " + main_cat_id);
+//				}
+//
+//			} catch (SQLException e) {
+//				e.printStackTrace();
+//			}
+//
+//		}
+//	}
 
-	public static void list() {
-
+	
+	//animal insertion method
+	public static boolean insert() 
+	{
 		Connection connection = new ConnectionManager().getConnection();
-		if (connection != null) {
-			try {
-				String selectSQL = "select * from animal order by animal_id";
-				PreparedStatement statement = connection
-						.prepareStatement(selectSQL);
-
-				ResultSet set = statement.executeQuery();
-
-				while (set.next()) {
-					int animal_id = set.getInt("animal_id");
-					String animal_name = set.getString("animal_name");
-					String height = set.getString("height");
-					int weight = set.getInt("weight");
-					String sci_name = set.getString("sci_name");
-					int life_span = set.getInt("life_span");
-					int age = set.getInt("age");
-					int main_cat_id = set.getInt("main_category_id");
-					
-					System.out.println("Animal_Id : " + animal_id
-							+ " and Animal_Name : " + animal_name
-							+ " and height: " + height
-							+ " and weight: " + weight
-							+ " and sci_name: " + sci_name
-							+ " life_span: " + life_span
-							+ " and age: " + age
-							+ " and main_cat_id: " + main_cat_id);
-				}
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-
-		}
-	}
-
-	public static boolean insert() {
-		Connection connection = new ConnectionManager().getConnection();
-		if (connection != null) {
-			try {
+		if (connection != null) 
+		{
+		  try {
+			    //user inputs
 				Scanner sc = new Scanner(System.in);
 				System.out.println("Enter Animal Name: ");
 				String name = sc.nextLine();
@@ -73,6 +79,7 @@ public class Animal {
 				System.out.println("Enter animal_Id: ");
 				int animal_id = sc.nextInt();
 				
+				//sql query
 				String insertSQL = "insert into animal(animal_id,name,height,weight,sci_name,life_span,age)values (?,?,?,?,?,?,?)";
 				PreparedStatement statement = connection.prepareStatement(insertSQL);
 				
@@ -86,7 +93,6 @@ public class Animal {
 				
 			
 				int rowAffected = statement.executeUpdate();
-
 				if (rowAffected > 0)
 				{
 					System.out.println("Inserted details");
@@ -94,28 +100,35 @@ public class Animal {
 				}
 				else
 					return false;
-			} catch (SQLException e) {
+			  } 
+			   catch (SQLException e) 
+			   {
 				e.printStackTrace();
-			}
-
-		}
+			   }
+ 		 }
 		return false;
 	}
 
-	public static boolean delete() {
+	
+	//animal deletion method
+	public static boolean delete() 
+	{
 		Connection connection = new ConnectionManager().getConnection();
-		if (connection != null) {
-			try {
+		if (connection != null) 
+		{
+		   try {
+				//user inputs
 				Scanner sc = new Scanner(System.in);
 				System.out.println("Enter Animal Id: ");
 				int aid = sc.nextInt();
+				
+				//sql query
 				String deleteSQL = "DELETE FROM animal WHERE animal_id=?";
 				PreparedStatement statement = connection.prepareStatement(deleteSQL);
 
 				statement.setInt(1, aid);
 
 				int rowAffected = statement.executeUpdate();
-
 				if (rowAffected > 0)
 					{
 					System.out.println("Deleted details");
@@ -131,10 +144,14 @@ public class Animal {
 		return false;
 	}
 
-	public static boolean update() {
+	
+	//animal update method
+	public static boolean update() 
+	{
 		Connection connection = new ConnectionManager().getConnection();
 		if (connection != null) {
 			try {
+				//user inputs
 				Scanner sc = new Scanner(System.in);
 				System.out.println("Enter Animal Name: ");
 				String name = sc.nextLine();
@@ -153,6 +170,7 @@ public class Animal {
 				System.out.println("Enter animal_Id: ");
 				int aid = sc.nextInt();
 				
+				//sql query
 				String updateSQL = "update animal set name =?,height =?,weight =?,sci_name =?,life_span =?,age =?  where animal_id= ?";
 				
 				PreparedStatement statement = connection.prepareStatement(updateSQL);
@@ -167,9 +185,11 @@ public class Animal {
                 
                 
 				int rowAffected = statement.executeUpdate();
-
 				if (rowAffected > 0)
+				{
+					System.out.println("Updated details");
 					return true;
+				}
 				else
 					return false;
 			} catch (SQLException e) {

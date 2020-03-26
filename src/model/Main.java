@@ -6,12 +6,16 @@ import DAO.Animal;
 import DAO.AnimalDetails;
 import DAO.Category;
 import DAO.City;
-import DAO.ComplexQueries;
+import DAO.Display_Data;
 import DAO.State;
 import DAO.SubCategory;
 
-class MainClass {
 
+//extended class 
+class MainClass 
+{
+
+	//animal method
 	void animal(Animal a) {
 		Scanner sc = new Scanner(System.in);
 		System.out
@@ -25,6 +29,7 @@ class MainClass {
 				.println("----------------------------------------------------------------------------------------------");
 		int action_choice = sc.nextInt();
 
+		//switch conditions
 		switch (action_choice) {
 		case 1:
 			a.insert();
@@ -42,7 +47,10 @@ class MainClass {
 		}
 	}
 
-	void animalDetails(AnimalDetails ad) {
+	
+	//animal details method
+	void animalDetails(AnimalDetails ad) 
+	{
 		Scanner sc = new Scanner(System.in);
 		System.out
 				.println("----------------------------------------------------------------------------------------------");
@@ -55,6 +63,7 @@ class MainClass {
 				.println("----------------------------------------------------------------------------------------------");
 		int action_choice = sc.nextInt();
 
+		//switch conditions
 		switch (action_choice) {
 		case 1:
 			ad.insert();
@@ -72,7 +81,10 @@ class MainClass {
 		}
 	}
 
-	void state(State s) {
+	
+	//state method
+	void state(State s) 
+	{
 		Scanner sc = new Scanner(System.in);
 		System.out
 				.println("----------------------------------------------------------------------------------------------");
@@ -85,6 +97,7 @@ class MainClass {
 				.println("----------------------------------------------------------------------------------------------");
 		int action_choice = sc.nextInt();
 
+		//switch conditions
 		switch (action_choice) {
 		case 1:
 			s.insert();
@@ -102,7 +115,10 @@ class MainClass {
 		}
 	}
 
-	void city(City c) {
+	
+	//city method
+	void city(City c) 
+	{
 		Scanner sc = new Scanner(System.in);
 		System.out
 				.println("----------------------------------------------------------------------------------------------");
@@ -115,6 +131,7 @@ class MainClass {
 				.println("----------------------------------------------------------------------------------------------");
 		int action_choice = sc.nextInt();
 
+		//switch conditions
 		switch (action_choice) {
 		case 1:
 			c.insert();
@@ -132,7 +149,10 @@ class MainClass {
 		}
 	}
 
-	public void category(Category cat) {
+	
+	//category method
+	public void category(Category cat) 
+	{
 		Scanner sc = new Scanner(System.in);
 		System.out
 				.println("----------------------------------------------------------------------------------------------");
@@ -145,6 +165,7 @@ class MainClass {
 				.println("----------------------------------------------------------------------------------------------");
 		int action_choice = sc.nextInt();
 
+		//switch conditions
 		switch (action_choice) {
 		case 1:
 			cat.insert();
@@ -162,7 +183,10 @@ class MainClass {
 		}
 	}
 
-	void subCategory(SubCategory scat) {
+	
+	//subcategory method
+	void subCategory(SubCategory scat) 
+	{
 		Scanner sc = new Scanner(System.in);
 		System.out
 				.println("----------------------------------------------------------------------------------------------");
@@ -175,7 +199,8 @@ class MainClass {
 				.println("----------------------------------------------------------------------------------------------");
 		int action_choice = sc.nextInt();
 
-		switch (action_choice) {
+		//switch conditions
+		switch (action_choice){
 		case 1:
 			scat.insert();
 			break;
@@ -192,7 +217,10 @@ class MainClass {
 		}
 	}
 	
-	void complexQueries(){
+	
+	//complex queries method
+	void complexQueries()
+	{
 		Scanner sc = new Scanner(System.in);
 		System.out
 		.println("----------------------------------------------------------------------------------------------");
@@ -209,32 +237,35 @@ class MainClass {
 		.println("----------------------------------------------------------------------------------------------");
 		System.out.println("Enter Choice: ");
 		int ch = sc.nextInt();
-		ComplexQueries cq = new ComplexQueries();
+		Display_Data dd = new Display_Data();
 		
+		//switch conditions
 		switch(ch){
 			case 1:
-				cq.list1();
+				dd.list1();
 				break;
 			case 2:
-				cq.list2();
+				dd.list2();
 				break;
 			case 3:
-				cq.list3();
+				dd.list3();
 				break;
 			case 4:
-				cq.list4();
+				dd.list4();
 				break;
 			case 5:
-				cq.list5();
+				dd.list5();
 				break;
 			case 6:
-				cq.list6();
+				dd.list6();
 				break;
 			case 7:
-				cq.list7();
+				dd.list7();
 				break;
 			case 8:
-				cq.list8();
+				dd.list8();
+				break;
+			case 9:
 				break;
 			default:
 				System.out.println("Wrong Choice.");
@@ -247,11 +278,15 @@ class MainClass {
 
 
 
-public class Main {
+//Main class or  Driver code
+public class Main 
+{
 
 	private static Scanner sc;
 
-	public static void main(String[] args) {
+	//main method
+	public static void main(String[] args) 
+	{
 		sc = new Scanner(System.in);
 		System.out
 				.println("----------------------------------------------------------------------------------------------");
@@ -267,12 +302,14 @@ public class Main {
 			System.out.println("4.Animal_details");
 			System.out.println("5.State");
 			System.out.println("6.City");
-			System.out.println("7.Complex Queries");
+			System.out.println("7.Display Data");
 			System.out.println("8.Exit");
 			System.out.println("Enter your Choice(1-8)");
 
 			int table_choice = sc.nextInt();
 			MainClass mc = new MainClass();
+			
+			//switch conditions
 			switch (table_choice) {
 			case 1:
 				Animal a = new Animal();				

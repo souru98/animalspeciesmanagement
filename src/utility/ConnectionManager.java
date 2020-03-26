@@ -7,15 +7,21 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 
-
-public class ConnectionManager {
+//connection manager class
+public class ConnectionManager 
+{
 	
-		public static Connection getConnection() {
+	//method to connect the database
+		public static Connection getConnection() 
+		{
+			
 		Connection connection = null;
 		Properties prop = null;
 		try {
 			prop = loadPropertiesFile();
-		} catch (Exception e1) {
+		} 
+		catch (Exception e1) 
+		{
 			
 			e1.printStackTrace();
 		}
@@ -25,15 +31,19 @@ public class ConnectionManager {
 		final String url = prop.getProperty("url");
 		final String username = prop.getProperty("username");
 		final String password = prop.getProperty("password");
+		
 		try {
 			Class.forName(driver);
 			
-		
 			connection = DriverManager.getConnection(url,username,password);
-		} catch (SQLException e) {
+		    } 
+		catch (SQLException e) 
+		{
 			
 			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
+		} 
+		catch (ClassNotFoundException e) 
+		{
 			
 			e.printStackTrace();
 		}
@@ -41,7 +51,9 @@ public class ConnectionManager {
 	}
 	
 	
-	public static Properties loadPropertiesFile() throws Exception {
+		//load properties class
+	    public static Properties loadPropertiesFile() throws Exception 
+	    {
 		Properties prop = new Properties();
 		InputStream in = ConnectionManager.class.getClassLoader().getResourceAsStream("jdbc.properties");
 		prop.load(in);
