@@ -13,11 +13,19 @@ The output window will look like
 
 List Of tables:-
 1.Animal
+
 2.Category
+
 3.Sub_Category
+
 4.Animal_details
+
 5.State
+
 6.City
+
 7.Complex Queries
+
 8.Exit
+
 Enter your Choice(1-8)
