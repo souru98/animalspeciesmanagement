@@ -12,6 +12,7 @@ The output window will look like
 ----------------------------------------------------------------------------------------------
 
 List Of tables:-
+
 1.Animal
 
 2.Category
